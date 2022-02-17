@@ -1,5 +1,11 @@
 import { createStore } from "redux";
-import globalReducers from "../redux/actions/reducers/index";
+import globalReducers from "../redux/reducers/index";
+import { applyMiddleware , compose } from "redux";
+import thunk from "redux-thunk";
+
+
+const middleWare = [thunk];
+
 
 const storeAll = createStore(globalReducers, {
   todos: [
@@ -9,6 +15,6 @@ const storeAll = createStore(globalReducers, {
   user:[
     {userName: "Eden" , lastName:"Tasama"}
   ]
-});
+} , compose(applyMiddleware(...middleWare)));
 
 export default storeAll;

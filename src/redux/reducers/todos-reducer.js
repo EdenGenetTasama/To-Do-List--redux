@@ -1,4 +1,4 @@
-import todosTypes from "../../types";
+import todosTypes from "../types";
 
 const TodoReducer = (state=[], action) => {
   const { type, payload } = action;
