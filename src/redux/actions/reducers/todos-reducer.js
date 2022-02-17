@@ -1,6 +1,6 @@
 import todosTypes from "../../types";
 
-const TodoReducer = (state, action) => {
+const TodoReducer = (state=[], action) => {
   const { type, payload } = action;
   switch (type) {
     case todosTypes.ADD_TODO:
@@ -11,7 +11,7 @@ const TodoReducer = (state, action) => {
     // case todosTypes.DELETE_TODO:
     //   break;
     default:
-      break;
+      return state;
   }
 };
 
